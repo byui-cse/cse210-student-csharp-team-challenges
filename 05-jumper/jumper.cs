@@ -2,7 +2,7 @@ using System;
 
 namespace _05_jumper
 {
-    public class Program
+    public class Jumper
     {
         static void Main(string[] args)
         {
