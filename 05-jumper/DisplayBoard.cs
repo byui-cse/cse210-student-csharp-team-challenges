@@ -32,5 +32,6 @@ namespace _05_jumper
                 UseSer.DisplayText(@"/I\");
                 UseSer.DisplayText(@"/\");          
             }
+        }
     }
 }
