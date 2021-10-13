@@ -4,6 +4,7 @@ namespace _05_jumper
 {
     public class Board
     {
+        public int _incorrectCount = 0;
         static void DisplayBoard()
         {
             Console.WriteLine("Starting point for the Jumper project.");
