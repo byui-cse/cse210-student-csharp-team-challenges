@@ -4,16 +4,12 @@ namespace _05_jumper
 {
     public class UserService
     {
-        static void DisplayText(string text)
+        public char GetLetterChoice(string prompt)
         {
-            Console.WriteLine(text);
-        }
-
-        static void getLetterInput(string promptText)
-        {
-            Console.Write(promptText);
-            string letter = Console.ReadLine();
-
+            Console.Write(prompt);
+            char guess = Convert.ToChar(Console.ReadLine());
+            
+            return guess;
         } 
     }
 }

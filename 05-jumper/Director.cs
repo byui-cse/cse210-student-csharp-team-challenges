@@ -8,7 +8,7 @@ namespace _05_jumper
         public Parachute _parachute;
         public WordBank _words;
         public UserService _userService;
-        public DisplayBoard _board;
+        public Board _board;
 
         /// <summary>
         /// Initializes the actors of the game.
@@ -40,25 +40,21 @@ namespace _05_jumper
         /// </summary>
         public void GetInputs()
         {
-            string message = _parachute.GetLetter();
-            _board.DisplayBoard(message);
+            // char guess = _userService.GetLetter();
+            // _board.DisplayBoard();
 
-            string prompt = "Enter a location [1-1000]: ";
-            int location = _userService.GetNumberChoice(prompt);
+            string prompt = "Guess a letter [a-z]: ";
+            char guess = _userService.GetLetterChoice(prompt);
 
-            _seeker.Move(location);
+            _board.CheckGuess(guess);
         }
 
         /// <summary>
         /// Update any of the actors.
         /// </summary>
         public void DoUpdates()
-        {
-            _hider.Watch(_seeker._location);
-            
-            // Keep playing if the hider is not found (the ! symbol means not)
-            _keepPlaying = !_hider.IsFound();
-
+        {   
+            _keepPlaying = _parachute.IsAlive();
         }
 
         /// <summary>
@@ -66,8 +62,9 @@ namespace _05_jumper
         /// </summary>
         public void DoOutputs()
         {
-            string hint = _hider.GetHint();
-            _userService.DisplayText(hint);
+            _board.DisplayBoard();
+            if (_keepPlaying == false)
+                Console.WriteLine("Game Over");
         }
     }
 }
