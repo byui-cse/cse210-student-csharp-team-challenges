@@ -17,6 +17,4 @@ namespace _05_jumper
         } 
     }
 }
-=======
 
->>>>>>> fc90fc895ef5e1ca567541994dbac225d0433106
