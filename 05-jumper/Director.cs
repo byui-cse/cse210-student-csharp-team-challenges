@@ -2,9 +2,9 @@ using System;
 
 namespace _05_jumper
 {
-    class Director
+    public class Director
     {
-        static void Main(string[] args)
+        static void StartGame()
         {
             Console.WriteLine("Starting point for the Jumper project.");
         }
