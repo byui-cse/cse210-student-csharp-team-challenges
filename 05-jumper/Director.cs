@@ -8,7 +8,7 @@ namespace _05_jumper
         public Parachute _parachute;
         public WordBank _words;
         public UserService _userService;
-        public DisplayBoard _board;
+        public Board _board;
 
         /// <summary>
         /// Initializes the actors of the game.
