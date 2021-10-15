@@ -1,12 +1,20 @@
 using System;
+using System.Collections.Generic;
 
 namespace _05_jumper
 {
-    public class Jumper
-    {
-        static void Main(string[] args)
+   /// Stores all the data and logic associated with the jumper.
+   public class Jumper
+   {
+        // Class-wide variables go here
+        List<bool> _parachute = new List<bool>() {
+            true, true, true, true, true
+        };
+        
+        static void main(string[] args)
         {
-            Console.WriteLine("Starting point for the Jumper project.");
+            throw new NotImplementedException();
         }
+        
     }
 }
