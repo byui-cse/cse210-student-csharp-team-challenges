@@ -41,6 +41,8 @@ namespace _05_jumper
             // char guess = _userService.GetLetter();
             // _board.DisplayBoard();
 
+            _board.DisplayBoard();
+            _board.DisplayParachute();
             string prompt = "Guess a letter [a-z]: ";
             char guess = _userService.GetLetterChoice(prompt);
 
@@ -52,7 +54,7 @@ namespace _05_jumper
         /// </summary>
         public void DoUpdates()
         {   
-            _keepPlaying = _parachute.IsAlive();
+            _keepPlaying = _board.IsAlive();
         }
 
         /// <summary>
@@ -60,9 +62,15 @@ namespace _05_jumper
         /// </summary>
         public void DoOutputs()
         {
-            _board.DisplayBoard();
             if (_keepPlaying == false)
+                _board.DisplayParachute();
                 Console.WriteLine("Game Over");
+            if(_board.CheckWin())
+            {
+                _board.DisplayParachute();
+                Console.WriteLine("You Win!!");
+                _keepPlaying = false;
+            }
         }
     }
 }
