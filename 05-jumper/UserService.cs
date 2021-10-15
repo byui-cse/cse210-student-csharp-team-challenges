@@ -8,6 +8,7 @@ namespace _05_jumper
         {
             Console.Write(prompt);
             char guess = Convert.ToChar(Console.ReadLine());
+            return guess;
         }   
 
         public void DisplayText(string text)

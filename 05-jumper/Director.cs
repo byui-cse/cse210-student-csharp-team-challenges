@@ -5,7 +5,6 @@ namespace _05_jumper
     public class Director
     {
         public bool _keepPlaying;
-        public Parachute _parachute;
         public WordBank _words;
         public UserService _userService;
         public Board _board;
@@ -16,7 +15,6 @@ namespace _05_jumper
         public Director()
         {
             _keepPlaying = true;
-            _parachute = new Parachute();
             _words = new WordBank();
             _userService = new UserService();
             _board = new Board();
