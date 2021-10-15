@@ -11,10 +11,12 @@ namespace _05_jumper
       public DataValidationService _dataValidation = new DataValidationService();
 
       bool done = false;
-      string letter;
+      public string _letter;
 
       /// I don't know why this doesn't work, but we need to get this to work.
+      /// For now the following code will have to do
       // public const string _secretWord = _wordBank.GenerateWord(); 
+      public const string _secretWord = "secret";
 
       public void StartGame()
       {
@@ -30,8 +32,8 @@ namespace _05_jumper
       /// Get all the needed from the user
       public void GetInputs()
       {
-         letter = _userService.PromptLetter();
-         while (!_dataValidation.ValidateLetter(letter))
+         _letter = _userService.PromptLetter();
+         while (!_dataValidation.ValidateLetter(_letter))
          {
             _userService.ShowBadInputMessage();
             _userService.PromptLetter();
@@ -41,7 +43,7 @@ namespace _05_jumper
       /// Update the game state
       public void DoUpdates()
       {
-         _jumper.
+         _jumper.CompareLetter(_letter, _secretWord);
       }
 
       /// Do all the outputs for the game

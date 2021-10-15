@@ -11,7 +11,7 @@ namespace _05_jumper
             true, true, true, true, true
         };
         
-        static void main(string[] args)
+        public bool CompareLetter(string letter, string word)
         {
             throw new NotImplementedException();
         }
