@@ -2,11 +2,12 @@
 
 namespace _05_jumper
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Starting point for the Jumper project.");
+            Director theDirector = new Director();
+            theDirector.StartGame();
         }
     }
 }
