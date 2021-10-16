@@ -1,4 +1,5 @@
 Jumper - Team Challenge Project
 
 Authors:  
-Sully Udall
+Sully Udall  
+Nazanal Laughlin
