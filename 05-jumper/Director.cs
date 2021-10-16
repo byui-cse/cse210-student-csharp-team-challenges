@@ -62,9 +62,11 @@ namespace _05_jumper
         /// </summary>
         public void DoOutputs()
         {
-            if (_keepPlaying == false)
+            if (_keepPlaying == false && !_board.CheckWin())
+            {
                 _board.DisplayParachute();
                 Console.WriteLine("Game Over");
+            }
             if(_board.CheckWin())
             {
                 _board.DisplayParachute();
