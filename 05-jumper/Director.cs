@@ -17,7 +17,7 @@ namespace _05_jumper
         /// </Summary>
         private void StartGame()
         {
-            
+
         }
 
         /// <Summary>
@@ -25,12 +25,12 @@ namespace _05_jumper
         /// </Summary>
         public void PlayGame()
         {
+            StartGame();
             while(_playing){
                 DoOutput();
                 char guess = GetGameInput();
                 DoUpdates(guess);
             }
-            EndGame();
         }
         
         /// <Summary>
