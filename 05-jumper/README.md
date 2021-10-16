@@ -1,4 +1,4 @@
 Jumper - Team Challenge Project
 
-Authors:
+Authors:  
 Sully Udall
