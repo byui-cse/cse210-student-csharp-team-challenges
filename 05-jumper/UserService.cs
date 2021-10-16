@@ -34,11 +34,14 @@ namespace _05_jumper
             }  
         }
         /// <Summary>
-        /// 
+        /// Displays the current state of the game (word and jumper).
         /// </Summary>
         public void DisplayBoard(string word, string jumper)
         {
+            string displayWord = FormatWord(word);
+            Console.WriteLine(displayWord);
 
+            Console.WriteLine(jumper);
         }
 
         /// <Summary>
@@ -66,11 +69,11 @@ namespace _05_jumper
         }
 
         /// <Summary>
-        /// 
+        /// Add space between the letters in the word.
         /// </Summary>
         private string FormatWord(string baseWord)
         {
-            // computer
+            
             string output = "";
 
             foreach (char letter in baseWord){
