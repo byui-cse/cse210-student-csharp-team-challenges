@@ -7,17 +7,22 @@ namespace _05_jumper
     /// </Summary>
     class Director
     {
-        UserService _userService = new UserService();
-        Jumper _jumper = new Jumper();
-        Word _word = new Word();
-        bool _playing = true;
+        UserService _userService;
+        Jumper _jumper;
+        Word _word;
+        bool _playing;
 
         /// <Summary>
         /// Initializes the game.
         /// </Summary>
         private void StartGame()
         {
-
+            _userService = new UserService();
+            _jumper = new Jumper();
+            _word = new Word();
+            _word.SelectWord();
+            _playing = true;
+            DoOutput();
         }
 
         /// <Summary>
@@ -27,9 +32,9 @@ namespace _05_jumper
         {
             StartGame();
             while(_playing){
-                DoOutput();
                 char guess = GetGameInput();
                 DoUpdates(guess);
+                DoOutput();
             }
         }
         
@@ -47,10 +52,11 @@ namespace _05_jumper
         /// </Summary>
         private void DoUpdates(char guess)
         {
-            if (!_jumper.IsAlive() || _word.isGuessed()){
-                _playing = false;
-            } else if (!_word.CheckGuess(guess)){
+            if (!_word.CheckGuess(guess)){
                 _jumper.LoseLife();
+            }
+            if (!_jumper.IsAlive() || _word.IsGuessed()){
+                _playing = false;
             }
         }
 
@@ -69,6 +75,9 @@ namespace _05_jumper
         /// </Summary>
         public bool EndGame()
         {
+            string wordState = _word.GetFinalWord();
+            string jumperState = _jumper.GetStatus();
+            _userService.DisplayBoard(wordState, jumperState);
             return _userService.GetPlayAgain();
         }
     }

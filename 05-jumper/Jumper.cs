@@ -29,7 +29,7 @@ namespace _05_jumper
                 jumper += @"/___\" + "\n";
                 jumper += @"\   / " + "\n";
                 jumper += @" \ /  " + "\n";
-                jumper += "   0   " + "\n";
+                jumper += @"  0   " + "\n";
                 jumper += @" /|\  " + "\n";
                 jumper += @" / \  " + "\n";
                 jumper += "\n";
@@ -40,7 +40,7 @@ namespace _05_jumper
                 jumper += @"/___\" + "\n";
                 jumper += @"\   / " + "\n";
                 jumper += @" \ /  " + "\n";
-                jumper += "   0   " + "\n";
+                jumper += @"  0   " + "\n";
                 jumper += @" /|\  " + "\n";
                 jumper += @" / \  " + "\n";
                 jumper += "\n";
@@ -50,7 +50,7 @@ namespace _05_jumper
             {
                 jumper += @"\   / " + "\n";
                 jumper += @" \ /  " + "\n";
-                jumper += "   0   " + "\n";
+                jumper += @"  0   " + "\n";
                 jumper += @" /|\  " + "\n";
                 jumper += @" / \  " + "\n";
                 jumper += "\n";
@@ -59,7 +59,7 @@ namespace _05_jumper
             else if (_lives == 1)
             {
                 jumper += @" \ /  " + "\n";
-                jumper += "   0   " + "\n";
+                jumper += @"  0   " + "\n";
                 jumper += @" /|\  " + "\n";
                 jumper += @" / \  " + "\n";
                 jumper += "\n";
@@ -67,10 +67,9 @@ namespace _05_jumper
             }
             else if (_lives == 0)
             {
-                jumper += "   X   " + "\n";
+                jumper += @"   X   " + "\n";
                 jumper += @" /|\  " + "\n";
                 jumper += @" / \  " + "\n";
-                jumper += "\n";
                 jumper += "^^^^^^^";
             }
             return jumper;
