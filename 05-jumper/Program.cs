@@ -6,7 +6,12 @@ namespace _05_jumper
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting point for the Jumper project.");
+            bool _running = true;
+            Director _director = new Director();
+            while (_running){
+                _director.PlayGame();
+                _running = _director.EndGame();
+            }
         }
     }
 }
