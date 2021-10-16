@@ -16,15 +16,15 @@ namespace _05_jumper
             while(true){
                 Console.WriteLine("Do you want to play again?(Y / N): ");
             
-                string input = Console.ReadLine();
+                string input = Console.ReadLine().ToLower();
 
                 if (input.Length == 1)
                 {
-                    if (input == "Y")
+                    if (input == "y")
                     {
                         return true;
                     }
-                    if (input == "N")
+                    if (input == "n")
                     {
                         return false;
                     }
