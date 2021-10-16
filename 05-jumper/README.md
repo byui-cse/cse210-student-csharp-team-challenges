@@ -4,3 +4,4 @@ Authors:
 Sully Udall  
 Nazanal Laughlin  
 David Mumford  
+Felipe Goncalves
