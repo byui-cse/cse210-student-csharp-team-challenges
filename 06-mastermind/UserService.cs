@@ -5,9 +5,12 @@ namespace _06_mastermind
 {
     class UserService
     {
-        static void Main(string[] args)
+        public string GetStringInput(string promptText)
         {
-            Console.WriteLine("Starting point for the Mastermind project.");
+            Console.Write(promptText);
+            string userInput = Console.ReadLine();
+
+            return userInput;
         }
     }
 }
