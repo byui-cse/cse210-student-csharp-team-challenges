@@ -5,11 +5,6 @@ namespace _05_jumper
     public class Director
     {
         public bool _keepPlaying;
-<<<<<<< HEAD
-        public Parachute _parachute;
-        public UserService _userService;
-        static void Main(string[] args)
-=======
         public WordBank _words;
         public UserService _userService;
         public Board _board;
@@ -66,7 +61,6 @@ namespace _05_jumper
         /// Display the updated state of the game to the user.
         /// </summary>
         public void DoOutputs()
->>>>>>> 1958db70433ac03a799534b91c1dd2a85366da75
         {
             if (_keepPlaying == false && !_board.CheckWin())
             {
