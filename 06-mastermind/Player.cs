@@ -1,9 +1,9 @@
-//displaying board and doing the logic for each guess
+//creating new players and holds guess
 using System;
 
 namespace _06_mastermind
 {
-    class Board
+    class Player
     {
         static void Main(string[] args)
         {

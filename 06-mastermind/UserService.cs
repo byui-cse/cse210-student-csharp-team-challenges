@@ -1,9 +1,9 @@
-//displaying board and doing the logic for each guess
+//communicating with terminal
 using System;
 
 namespace _06_mastermind
 {
-    class Board
+    class UserService
     {
         static void Main(string[] args)
         {
