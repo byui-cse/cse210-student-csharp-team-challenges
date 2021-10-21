@@ -4,39 +4,29 @@ namespace _06_mastermind
 {
     class Player
     {
-        string _lastGuess;
+        string _lastGuess = "----";
 
-        string _lastHint;
+        string _lastHint = "****";
 
         string _name;
 
-        // public void getName()
-        // {
-
-        // }
-        public void setName()
-        {
-
+        public void setName(string name){
+            _name = name;
         }
-        // public void getLastGuess()
-        // {
 
-        // }
-        public void setLastGuess()
+        public void setLastGuess(string guess)
         {
-
+            _lastGuess = guess;
         }
-        // public void getLastHint()
-        // {
 
-        // }
-        public void setLastHint()
+        public void setLastHint(string hint)
         {
-
+            _lastHint = hint;
         }
         public string getTurnDisplay()
         {
-            return "";
+            string turnDisplay = $"Player {_name}: {_lastGuess}, {_lastHint}";
+            return turnDisplay;
         }
     }
 }
