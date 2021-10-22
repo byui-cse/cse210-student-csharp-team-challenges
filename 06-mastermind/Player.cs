@@ -14,7 +14,13 @@ namespace _06_mastermind
         }
         public string getName()
         {
-            return name;
+            return _name;
+        }
+
+        public string getGuess()
+        {
+            _guess.getGuess();
+            return null;
         }
         
     }
