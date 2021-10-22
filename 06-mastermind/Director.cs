@@ -4,9 +4,9 @@ namespace _06_mastermind
 {
     class Director
     {
-        static void Main(string[] args)
+        public Director()
         {
-            Console.WriteLine("Starting point for the Mastermind project.");
+
         }
     }
 }
