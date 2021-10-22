@@ -21,9 +21,9 @@ namespace _06_mastermind
             _guess.getGuess();
             return null;
         }
-        public void setGuess()
+        public void setGuess(string guess)
         {
-            _guess.setGuess();
+            _guess.setGuess(guess);
         }
     }
 }

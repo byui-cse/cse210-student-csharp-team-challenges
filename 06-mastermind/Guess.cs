@@ -5,9 +5,15 @@ namespace _06_mastermind
 {
     class Guess
     {
-        static void Main(string[] args)
+        private string _guess;
+
+        public string getGuess()
         {
-            Console.WriteLine("Starting point for the Mastermind project.");
+            return _guess;
+        }
+        public void setGuess(string guess)
+        {
+            _guess = guess;
         }
     }
 }
