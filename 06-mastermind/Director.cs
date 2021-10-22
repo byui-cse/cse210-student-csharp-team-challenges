@@ -8,5 +8,9 @@ namespace _06_mastermind
         {
 
         }
+        public void StartGame()
+        {
+
+        }
     }
 }
