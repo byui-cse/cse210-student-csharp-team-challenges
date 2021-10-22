@@ -5,9 +5,11 @@ namespace _06_mastermind
 {
     class Board
     {
-        static void Main(string[] args)
+        private int code;
+        public Board()
         {
-            Console.WriteLine("Starting point for the Mastermind project.");
+            Random rng = new Random();
+            code= rng.Next(1000,10000);
         }
     }
 }
