@@ -7,14 +7,14 @@ namespace _06_mastermind
     {
         private string _name;
         private Guess _guess;
-        
+
         public Player(string name)
         {
             _name = name;
         }
         public string getName()
         {
-            return name;
+            return _name;
         }
         
     }
