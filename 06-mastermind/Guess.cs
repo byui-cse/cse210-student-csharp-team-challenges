@@ -1,4 +1,3 @@
-//pulls from user service then throws to player
 using System;
 
 namespace _06_mastermind
