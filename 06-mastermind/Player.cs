@@ -5,9 +5,17 @@ namespace _06_mastermind
 {
     class Player
     {
-        static void Main(string[] args)
+        private string _name;
+        private Guess _guess;
+        
+        public Player(string name)
         {
-            Console.WriteLine("Starting point for the Mastermind project.");
+            _name = name;
         }
+        public string getName()
+        {
+            return name;
+        }
+        
     }
 }
