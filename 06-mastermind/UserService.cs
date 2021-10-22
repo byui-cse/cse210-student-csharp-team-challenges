@@ -10,7 +10,7 @@ namespace _06_mastermind
             Console.WriteLine(text);
         }
 
-        static string GetInput(string prompt)
+        public string GetInput(string prompt)
         {
             Console.Write(prompt);
             string input = Console.ReadLine();

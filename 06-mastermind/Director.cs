@@ -11,9 +11,9 @@ namespace _06_mastermind
         public void StartGame()
         {
             UserService _userservice = new UserService();
-            string name = _userservice.GetStringInput("What is the name of player 1?  ");
+            string name = _userservice.GetInput("What is the name of player 1?  ");
             Player _player1 = new Player(name);
-            name = _userservice.GetStringInput("What is the name of player 2?  ");
+            name = _userservice.GetInput("What is the name of player 2?  ");
             Player _player2 = new Player(name);
         }
     }
