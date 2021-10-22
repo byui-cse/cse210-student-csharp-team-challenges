@@ -6,11 +6,12 @@ namespace _06_mastermind
     class Player
     {
         private string _name;
-        private Guess _guess;
+        private Guess _guess = new Guess();
 
         public Player(string name)
         {
             _name = name;
+            _guess = new Guess();
         }
         public string getName()
         {
@@ -18,12 +19,12 @@ namespace _06_mastermind
         }
         public string getGuess()
         {
-            _guess.getGuess();
-            return null;
+            string guess = _guess.Get();
+            return guess;
         }
         public void setGuess(string guess)
         {
-            _guess.setGuess(guess);
+            _guess.Set(guess);
         }
     }
 }

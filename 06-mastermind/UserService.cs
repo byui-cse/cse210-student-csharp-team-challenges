@@ -5,7 +5,7 @@ namespace _06_mastermind
 {
     class UserService
     {
-        static void DisplayText(string text)
+        public void DisplayText(string text)
         {
             Console.WriteLine(text);
         }

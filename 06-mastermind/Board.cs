@@ -42,7 +42,7 @@ namespace _06_mastermind
             return HintText;
         }
 
-        private bool CheckWin(string guess)
+        public bool CheckWin(string guess)
         {
             if (guess == _number)
             {

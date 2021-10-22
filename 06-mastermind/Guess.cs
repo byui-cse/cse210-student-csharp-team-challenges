@@ -6,12 +6,16 @@ namespace _06_mastermind
     class Guess
     {
         private string _guess;
+        public Guess()
+        {
+            _guess = "----";
+        }
 
-        public string getGuess()
+        public string Get()
         {
             return _guess;
         }
-        public void setGuess(string guess)
+        public void Set(string guess)
         {
             _guess = guess;
         }
