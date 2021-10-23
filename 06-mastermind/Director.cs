@@ -10,27 +10,49 @@ namespace _06_mastermind
 
         UserService _userService;
 
-        bool _playing;
+      
+        bool _keepPlaying;
 
-        private void getInputs()
+        private string getInputs()
         {
+            string guess = _userService.getGuess();
 
+            return guess;
         }
-        private void doUpdates()
+        private void doUpdates(string guess)
         {
-
+            if (!_code.isSecret(guess))
+            {
+                string hint = _code.getHint(guess);
+                _board.updatePlayer(guess);
+            }
+            else
+            {
+                _keepPlaying = false;
+            }
         }
         private void doOutput()
         {
-
+            _userService.displayTurn(_board.formatTurnDisplay());
         }
         private void startGame()
         {
-
+            _userService = new UserService();
+            _code = new Code();
+            _board = new Board();
         }
-        private void playerGame()
+        public void playGame()
         {
+            startGame();
+            doOutput();
+            while(_keepPlaying)
+            {
+                string guess = getInputs();
+                doUpdates(guess);
+                doOutput();
+            }
 
+        
         }
 
     }
