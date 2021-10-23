@@ -47,15 +47,16 @@ namespace _06_mastermind
                 if (_secret[i] == guess[i])
                 {
                     hint += "x";
+                }                
+                else if (_secret.Contains(guess[i]))
+                {
+                    hint += "o";
                 }
                 else if (_secret[i] != guess[i])
                 {
                     hint += "*";
                 }
-                else if (_secret.Contains(guess[i]))
-                {
-                    hint += "o";
-                }
+
             }
             return hint;
         }
