@@ -49,11 +49,13 @@ namespace _06_mastermind
         /// </summary>
         /// </params> guess: what the player guessed
         ///         hint: what hint the player was given
-        public void updatePlayer(string guess, string hint)
+        public void updatePlayer(string guess, string hint, bool cyclePlayer = true)
         {
             _players[_activePlayer].setLastGuess(guess);
             _players[_activePlayer].setLastHint(hint);
-            switchActivePlayer();
+            if (cyclePlayer){
+                switchActivePlayer();
+            }
         }
 
         

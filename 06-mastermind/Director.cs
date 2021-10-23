@@ -31,11 +31,12 @@ namespace _06_mastermind
         {
             
             string hint = _code.getHint(guess);
-            _board.updatePlayer(guess, hint);
-            
             if (_code.isSecret(guess))
             {
                 _keepPlaying = false;
+                _board.updatePlayer(guess, hint, false);
+            } else {
+                _board.updatePlayer(guess, hint);
             }
         }
 
@@ -66,12 +67,11 @@ namespace _06_mastermind
         public void playGame()
         {
             startGame();
-            doOutput();
             while(_keepPlaying)
             {
+                doOutput();
                 string guess = getInputs();
                 doUpdates(guess);
-                doOutput();
             }
             EndGame();
 
