@@ -20,9 +20,19 @@ namespace _06_mastermind
             _secret = secretNumber.ToString();
         }
         /// <summary>
+        /// A constructor so that a new secret code is generated every time its called.
+        /// </summary>
+        /// <returns>new secret code</returns>
+        public Code()        
+        {
+            generateSecret();
+        }
+
+        /// <summary>
         /// Deteremines wheter or not the guess is correct
         /// </summary>
         /// <returns>If correct, returns true. if incorrect, returns false.</returns>
+
         public bool isSecret(string guess)
         {
             if (guess == _secret)
