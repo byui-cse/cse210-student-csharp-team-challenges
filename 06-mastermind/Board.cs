@@ -38,6 +38,8 @@ namespace _06_mastermind
             turnDisplay += "---------------------\n";
             if (win){
                 turnDisplay += $"{_players[_activePlayer].getName()} Wins!";
+            } else {
+                turnDisplay += $"It is {_players[_activePlayer].getName()}'s turn.";
             }
             return turnDisplay;
         }
