@@ -10,6 +10,7 @@ namespace _06_mastermind
 
         UserService _userService;
 
+      
         bool _keepPlaying;
 
         private string getInputs()
@@ -50,6 +51,8 @@ namespace _06_mastermind
                 doUpdates(guess);
                 doOutput();
             }
+
+        
         }
 
     }

@@ -19,7 +19,7 @@ namespace _05_jumper
         ///<summary> Selects a word at random from a txt file and changes the _word member variable and creates blank _wordDisplay.
         ///<params> none
         ///<returns> none
-        private void SelectWord()
+        public void SelectWord()
         {
             List<string> lines = new List<string>(File.ReadAllLines("WordList.txt"));
             Random r = new Random();
@@ -84,6 +84,14 @@ namespace _05_jumper
         public string GetWordDisplay()
         {
             return _wordDisplay;
+        }
+
+        ///<summary> returns the  word for use in other places in the program
+        ///<params> none
+        ///<returns> string _word
+        public string GetFinalWord()
+        {
+            return _word;
         }
     }
 }
