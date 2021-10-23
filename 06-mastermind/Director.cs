@@ -66,12 +66,12 @@ namespace _06_mastermind
         public void playGame()
         {
             startGame();
-            doOutput();
+
             while(_keepPlaying)
             {
+                doOutput();
                 string guess = getInputs();
                 doUpdates(guess);
-                doOutput();
             }
             EndGame();
 
