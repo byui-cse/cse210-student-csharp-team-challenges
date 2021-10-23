@@ -12,7 +12,7 @@ namespace _06_mastermind
         UserService _userService;
 
       
-        bool _keepPlaying;
+        bool _keepPlaying = true;
 
         /// <summary>Get the guess needed for the game</summary>
         ///<params>none</params>
