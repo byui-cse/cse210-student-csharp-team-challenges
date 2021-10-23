@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace _06_mastermind
 {
@@ -55,6 +56,9 @@ namespace _06_mastermind
             _userService = new UserService();
             _code = new Code();
             _board = new Board();
+            List<string> names = _userService.getName();
+            _board.namePlayers(names);
+            
         }
 
         /// <summary>the main loop of the game that calls the other game related methods </summary>
@@ -70,9 +74,17 @@ namespace _06_mastermind
                 doUpdates(guess);
                 doOutput();
             }
+            EndGame();
 
         
         }
 
+        ///<summary>Display the message at the end saying who has won the game </summary>
+        ///<params> none </params>
+        ///<returns> none </returns>
+        private void EndGame()
+        {
+            _userService.displayTurn(_board.formatTurnDisplay(true));
+        }
     }
 }
