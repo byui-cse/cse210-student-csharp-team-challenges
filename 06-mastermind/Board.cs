@@ -36,7 +36,9 @@ namespace _06_mastermind
                 turnDisplay += "\n";
             }
             turnDisplay += "---------------------\n";
-            turnDisplay += $"{_activePlayer} Wins!";
+            if (win){
+                turnDisplay += $"{_players[_activePlayer].getName()} Wins!";
+            }
             return turnDisplay;
         }
 
@@ -71,7 +73,6 @@ namespace _06_mastermind
             for (int i = 0; i < playerNames.Count; i++){
                 _players[i].setName(playerNames[i]);
             }
-            List<string> bruh = new List<string>{};
         }
 
     }

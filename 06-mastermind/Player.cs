@@ -48,5 +48,12 @@ namespace _06_mastermind
             string turnDisplay = $"Player {_name}: {_lastGuess}, {_lastHint}";
             return turnDisplay;
         }
+
+        /// <summary>
+        /// Returns name
+        /// <summary>
+        public string getName(){
+            return _name;
+        }
     }
 }
