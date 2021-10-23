@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+
 namespace _06_mastermind
 {
     class UserService
@@ -60,5 +61,6 @@ namespace _06_mastermind
 
             }
                   
+
     }
 }
