@@ -29,12 +29,11 @@ namespace _06_mastermind
         ///<returns>none</returns>
         private void doUpdates(string guess)
         {
-            if (!_code.isSecret(guess))
-            {
-                string hint = _code.getHint(guess);
-                _board.updatePlayer(guess, hint);
-            }
-            else
+            
+            string hint = _code.getHint(guess);
+            _board.updatePlayer(guess, hint);
+            
+            if (_code.isSecret(guess))
             {
                 _keepPlaying = false;
             }
