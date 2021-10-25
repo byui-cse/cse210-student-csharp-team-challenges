@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace _07_speed
+namespace _07_snake
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Director theDirector = new Director();
+            theDirector.StartGame();
         }
     }
 }
