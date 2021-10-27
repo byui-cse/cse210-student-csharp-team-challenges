@@ -7,7 +7,7 @@ namespace _07_snake
     /// Represents the snake in the game which is composed of a list
     /// of overlapping segments.
     /// </summary>
-    class Snake : Actor
+    class Word : Actor
     {
         private List<Actor> _segments = new List<Actor>();
         private int _canCollideIndex = Constants.DEFAULT_SQUARE_SIZE * 2 + 1;
