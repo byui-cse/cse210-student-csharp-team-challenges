@@ -19,7 +19,7 @@ namespace _07_snake
         InputService _inputService = new InputService();
 
 
-        Word word = new Word();
+        Word _word = new Word();
         ScoreBoard _scoreBoard = new ScoreBoard();
 
         /// <summary>
@@ -31,7 +31,6 @@ namespace _07_snake
 
             while (_keepPlaying)
             {
-                GetInputs();
                 DoUpdates();
                 DoOutputs();
 
@@ -55,35 +54,14 @@ namespace _07_snake
         /// <summary>
         /// Get any input needed from the user.
         /// </summary>
-        private void GetInputs()
-        {
-            if (_inputService.IsLeftPressed())
-            {
-                _snake.TurnHead(new Point(-1, 0));
-            }
-            else if (_inputService.IsRightPressed())
-            {
-                _snake.TurnHead(new Point(1, 0));
-            }
-            else if (_inputService.IsUpPressed())
-            {
-                _snake.TurnHead(new Point(0, -1));
-            }
-            else if (_inputService.IsDownPressed())
-            {
-                _snake.TurnHead(new Point(0, 1));
-            }
-        }
 
         /// <summary>
         /// Update any of the actors.
         /// </summary>
         private void DoUpdates()
         {
-            _snake.Move();
+            _word.Move();
 
-            HandleFoodCollision();
-            HandleBodyCollision();
         }
 
         /// <summary>
@@ -94,10 +72,8 @@ namespace _07_snake
             _outputService.StartDrawing();
 
             _outputService.DrawActor(_scoreBoard);
-
-            _outputService.DrawActor(_food);
             
-            _outputService.DrawActors(_snake.GetAllSegments());
+            _outputService.DrawActors(_word.Geword());
 
             _outputService.EndDrawing();
         }
@@ -106,50 +82,8 @@ namespace _07_snake
         /// Looks for and handles collisions between the snake's head
         /// and it's body.
         /// </summary>
-        private void HandleBodyCollision()
-        {
-            Actor head = _snake.GetHead();
+        
 
-            List<Actor> segments = _snake.GetCollidableSegments();
-
-            foreach(Actor segment in segments)
-            {
-                if (IsCollision(head, segment))
-                {
-                    // There is a collision
-                    _keepPlaying = false;
-                    break;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Looks for and handles the case of the snake's head
-        /// colliding with the food.
-        /// </summary>
-        private void HandleFoodCollision()
-        {
-            // TODO: Add this code back in when
-            // the food class is complete.
-
-            Actor head = _snake.GetHead();
-            
-            if (IsCollision(head, _food))
-            {
-                int points = _food.GetPoints();
-
-                _snake.GrowTail(points);
-                _scoreBoard.AddPoints(points);
-                _food.Reset();
-            }
-        }
-
-        /// <summary>
-        /// Returns true if the two actors are overlapping.
-        /// </summary>
-        /// <param name="first"></param>
-        /// <param name="second"></param>
-        /// <returns></returns>
         public bool IsCollision(Actor first, Actor second)
         {
             int x1 = first.GetX();

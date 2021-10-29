@@ -37,6 +37,10 @@ namespace _07_snake
 
             
         }
+        public List<Actor> Geword()
+        {
+            return new List<Actor>();
+        }
 
     }
 
