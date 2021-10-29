@@ -48,7 +48,7 @@ namespace _07_speed
         /// </summary>
         private void PrepareGame()
         {
-            _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Snake Game", Constants.FRAME_RATE);
+            _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Speed", Constants.FRAME_RATE);
         }
 
         /// <summary>
@@ -72,8 +72,8 @@ namespace _07_speed
             _outputService.StartDrawing();
 
             _outputService.DrawActor(_scoreBoard);
-            
-            _outputService.DrawActors(_word.Geword());
+
+            _outputService.DrawText(_word.GetX(),_word.GetY(),_word.GetText(),true);
 
             _outputService.EndDrawing();
         }

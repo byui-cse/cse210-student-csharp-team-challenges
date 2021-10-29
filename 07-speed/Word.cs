@@ -27,8 +27,10 @@ namespace _07_speed
             int y = rnd.Next(20,Constants.MAX_Y - 20);
 
             Point position = new Point(x, y);
-            Point velocity = new Point(rnd.Next(-10,0), 0);
+            Point velocity = new Point(rnd.Next(-5,0), 0);
+            _text = "Yes";
             SetVelocity(velocity);
+            SetPosition(position);
         }
         public void Move()
         {

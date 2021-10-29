@@ -69,6 +69,10 @@ namespace _07_speed
         {
             _velocity = newVelocity;
         }
+        public void SetPosition(Point newPosition)
+        {
+            _position = newPosition;
+        }
 
         /// <summary>
         /// Moves the actor forward one space according to the current
