@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace _07_snake
+namespace _07_speed
 {
     /// <summary>
     /// Represents the snake in the game which is composed of a list
@@ -37,9 +37,9 @@ namespace _07_snake
 
             
         }
-        public List<Actor> Geword()
+        public Actor Geword()
         {
-            return new List<Actor>();
+            return new Actor();
         }
 
     }

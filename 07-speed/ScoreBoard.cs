@@ -1,6 +1,6 @@
 using System;
 
-namespace _07_snake
+namespace _07_speed
 {
     /// <summary>
     /// The score board in the top portion of the game.

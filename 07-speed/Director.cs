@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Raylib_cs;
 
-namespace _07_snake
+namespace _07_speed
 {
     /// <summary>
     /// The director is responsible to direct the game, including to keep track of all
