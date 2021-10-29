@@ -10,9 +10,9 @@ namespace _07_snake
     class Word : Actor
     {
         private List<string> _words = new List<string>();
-        private int _canCollideIndex = Constants.DEFAULT_SQUARE_SIZE * 2 + 1;
+        
 
-        public Snake()
+        public Word()
         {
             PrepareBody();
         }
