@@ -18,9 +18,8 @@ namespace _07_snake
         OutputService _outputService = new OutputService();
         InputService _inputService = new InputService();
 
-        Food _food = new Food();
 
-        Snake _snake = new Snake();
+        Word word = new Word();
         ScoreBoard _scoreBoard = new ScoreBoard();
 
         /// <summary>
