@@ -79,11 +79,8 @@ namespace _07_snake
             int x = _position.GetX();
             int y = _position.GetY();
 
-            int dx = _velocity.GetX();
-            int dy = _velocity.GetY();
-
-            int newX = (x + dx) % Constants.MAX_X;
-            int newY = (y + dy) % Constants.MAX_Y;
+            int newX = x+_velocity.GetX();
+            int newY = y;
 
             if (newX < 0)
             {
