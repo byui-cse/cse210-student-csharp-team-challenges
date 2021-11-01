@@ -37,5 +37,11 @@ namespace _07_speed
             return _points;
         }
 
+        /// <summary> Returns whether or not the enemy has escaped
+        /// <returns> Bool: escaped
+        public bool hasEscaped(){
+            return (_position.GetX() <= 0);
+        }
+
     }
 }
