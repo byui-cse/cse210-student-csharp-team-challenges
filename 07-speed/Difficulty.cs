@@ -12,55 +12,57 @@ namespace _07_speed
 
         int _speed = 2;
 
+        const int _gapBetweenPhases = 10;
+
         /// <summary>Do the logic to determine what the new difficulty of the game should be
         /// based on how many kills have happened so far.</summary>
         ///<param name="kills"><param>
         ///<return>none<return>
         public void updateDifficulty(int kills)
         {
-            // Hardest phase
-            if (kills >= 30)
+            // Hardest phase, Phase 4
+            if (kills >= (_gapBetweenPhases * 4))
             {
                 _maxEnemies = 10;
                 _speed = 4;
             }
             
-            // intermediate phase
-            else if (kills >= 20)
+            // intermediate phase 3
+            else if (kills >= (_gapBetweenPhases * 3))
             {
                 _maxEnemies = 8;
                 _speed = 3;
             }
 
-            // intermediate phase
-            else if (kills >= 10)
+            // intermediate phase 2
+            else if (kills >= (_gapBetweenPhases * 2))
             {
                 _maxEnemies = 7;
                 _speed = 2;
             }
 
-            // starting phase with a slow introduction of words
-            else if (kills <= 9)
+            // Phase 1 with a slow introduction of words
+            else if (kills <= (_gapBetweenPhases))
             {
-                if (kills >= 8)
+                if (kills >= Math.Round(_gapBetweenPhases * .8))
                 {
                     _maxEnemies = 5;
                     _speed = 1;
                 }
 
-                else if (kills >= 6)
+                else if (kills >= Math.Round(_gapBetweenPhases * .6))
                 {
                     _maxEnemies = 4;
                     _speed = 1;
                 }
 
-                else if (kills >= 4)
+                else if (kills >= Math.Round(_gapBetweenPhases * .4))
                 {
                     _maxEnemies = 3;
                     _speed = 1;
                 }
 
-                else if (kills >= 2)
+                else if (kills >= Math.Round(_gapBetweenPhases * .2))
                 {
                     _maxEnemies = 2;
                     _speed = 1;
