@@ -64,10 +64,16 @@ namespace _07_speed
             {
                 foreach(Word word in _words)
                 {
+                    Console.WriteLine(word.GetText());
                     if (word.CheckGuess(_buffer))
                     {
-                        _scoreBoard.AddPoints(word.GetLength());
+                        int points = word.GetTextLength();
+                        _scoreBoard.AddPoints(points);
                         _excludeWords.Add(word);
+                    }
+                    else
+                    {
+                        
                     }
                 }
                 _buffer = "";
@@ -84,15 +90,17 @@ namespace _07_speed
         /// </summary>
         private void DoUpdates()
         {
-            for(int i = 0; i < 10; i++)
+            while (_words.Count < 10)
             {
                 _words.Add(new Word());
-                _words[i].MoveNext();
-
-                if(IsCollision(_words[i]))
+            }
+            foreach (Word word in _words)
+            {
+                word.MoveNext();
+                if(IsCollision(word))
                 {
-                    _scoreBoard.AddPoints(-_words[i].GetLength());
-                    _words.Remove(_words[i]);
+                    _scoreBoard.AddPoints(- word.GetLength());
+                    _excludeWords.Add(word);
                 }
             }
 
@@ -112,7 +120,13 @@ namespace _07_speed
 
             _outputService.DrawActor(_textBox);
 
-            for(int i = 0; i < 10; i++)
+            foreach (Word word in _excludeWords)
+            {
+                _words.Remove(word);
+            }
+            _excludeWords.Clear();
+
+            for(int i = 0; i < _words.Count; i++)
             {
                 _outputService.DrawText(_words[i].GetX(),_words[i].GetY(),_words[i].GetText(),true);
             }

@@ -19,8 +19,7 @@ namespace _07_speed
         {
             int asciiLetter = Raylib.GetKeyPressed();
             char letter = ((char)asciiLetter);
-            Console.WriteLine(letter);
-            if (asciiLetter >= 65 && asciiLetter < 132)
+            if (asciiLetter > 64 && asciiLetter < 132)
             {
                 return letter.ToString();
             }

@@ -64,6 +64,14 @@ namespace _07_speed
             }
         }
 
+        public int GetTextLength()
+        {
+            Console.WriteLine(_text.Length);
+            return _text.Length;
+        }
+
+
+
     }
 
 }
