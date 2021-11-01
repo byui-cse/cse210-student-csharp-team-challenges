@@ -28,9 +28,16 @@ namespace _07_speed
 
             Point position = new Point(x, y);
             Point velocity = new Point(rnd.Next(-10,0)/2,0);
-            _text = "Yes";
+            _text = GetRandWord();
             SetVelocity(velocity);
             SetPosition(position);
+        }
+
+        public string GetRandWord()
+        {
+            string[] lines = System.IO.File.ReadAllLines("WordBank.txt");
+            Random rnd = new Random();
+            return lines[rnd.Next(lines.Length)];
         }
         public void Move()
         {

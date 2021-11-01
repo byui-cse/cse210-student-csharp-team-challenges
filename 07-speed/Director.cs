@@ -24,6 +24,7 @@ namespace _07_speed
 
         Word _word = new Word();
         List<Actor> _words = new List<Actor>();
+        List<Actor> _excludeWords = new List<Actor>();
         ScoreBoard _scoreBoard = new ScoreBoard();
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace _07_speed
                     if (word.CheckGuess(_buffer))
                     {
                         _scoreBoard.AddPoints(word.GetLength());
-                        _words.Remove(word);
+                        _excludeWords.Add(word);
                     }
                 }
                 _buffer = "";
@@ -87,7 +88,7 @@ namespace _07_speed
             {
                 _words.Add(new Word());
                 _words[i].MoveNext();
-                
+
                 if(IsCollision(_words[i]))
                 {
                     _scoreBoard.AddPoints(-_words[i].GetLength());
