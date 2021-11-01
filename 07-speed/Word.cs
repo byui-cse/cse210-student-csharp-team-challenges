@@ -45,6 +45,18 @@ namespace _07_speed
             return new Actor();
         }
 
+        public bool CheckGuess(string guess)
+        {
+            if(guess.ToLower().Contains(_text.ToLower()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 
 }

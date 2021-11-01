@@ -19,6 +19,7 @@ namespace _07_speed
         InputService _inputService = new InputService();
 
         TextBox _textBox = new TextBox();
+        private string _buffer = "";
 
 
         Word _word = new Word();
@@ -57,6 +58,20 @@ namespace _07_speed
 
         private void GetInputs()
         {
+            _buffer += _inputService.ReturnKeyPressed();
+            if (_inputService.EnterPressed())
+            {
+                foreach(Word word in _words)
+                {
+                    if (word.CheckGuess(_buffer))
+                    {
+                        _scoreBoard.AddPoints(word.GetLength());
+                        _words.Remove(word);
+                    }
+                }
+                _buffer = "";
+            }
+
         }
 
         /// <summary>
@@ -75,8 +90,8 @@ namespace _07_speed
                 
                 if(IsCollision(_words[i]))
                 {
-                    _words.Remove(_words[i]);
                     _scoreBoard.AddPoints(-_words[i].GetLength());
+                    _words.Remove(_words[i]);
                 }
             }
 
@@ -91,6 +106,8 @@ namespace _07_speed
             _outputService.StartDrawing();
 
             _outputService.DrawActor(_scoreBoard);
+
+            _textBox.UpdateTextBox(_buffer);
 
             _outputService.DrawActor(_textBox);
 

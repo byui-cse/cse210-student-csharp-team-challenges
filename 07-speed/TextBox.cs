@@ -8,15 +8,16 @@ namespace _07_speed
 
         public TextBox()
         {
-            _position = new Point(1,Constants.MAX_Y - 20);
+            _position = new Point(1,Constants.MAX_Y - 25);
             _width = 0;
             _height = 0;
             _text = "Buffer: ";
+            
+        }
+        public void UpdateTextBox(string buffer)
+        {
+            _text = $"Buffer: {buffer}";
         }
 
-        public void TextDisplay(char letter)
-        {
-            _text += letter;
-        }
     }
 }

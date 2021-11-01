@@ -1,4 +1,5 @@
 using Raylib_cs;
+using System;
 
 
 namespace _07_speed
@@ -14,16 +15,24 @@ namespace _07_speed
 
         }
 
-        public bool IsKeyPressed(KeyboardKey key)
+        public string ReturnKeyPressed()
         {
-            if(Raylib.IsKeyPressed(key))
+            int asciiLetter = Raylib.GetKeyPressed();
+            char letter = ((char)asciiLetter);
+            Console.WriteLine(letter);
+            if (asciiLetter >= 65 && asciiLetter < 132)
             {
-                return true;
+                return letter.ToString();
             }
             else
             {
-                return false;
+                return "";
             }
+        }
+
+        public bool EnterPressed()
+        {
+            return Raylib.IsKeyPressed(KeyboardKey.KEY_ENTER);
         }
             
         
