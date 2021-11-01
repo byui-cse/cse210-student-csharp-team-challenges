@@ -1,5 +1,5 @@
-using System;
 using Raylib_cs;
+
 
 namespace _07_speed
 {
@@ -8,28 +8,24 @@ namespace _07_speed
     /// </summary>
     public class InputService
     {
+        
         public InputService()
         {
 
         }
 
-        public bool IsLeftPressed()
+        public bool IsKeyPressed(KeyboardKey key)
         {
-            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_LEFT);
+            if(Raylib.IsKeyPressed(key))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-
-        public bool IsRightPressed()
-        {
-            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_RIGHT);
-        }
-        public bool IsUpPressed()
-        {
-            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_UP);
-        }
-        public bool IsDownPressed()
-        {
-            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_DOWN);
-        }
+            
         
         /// <summary>
         /// Returns true if the user has attempted to close the window.

@@ -9,7 +9,7 @@ namespace _07_speed
     /// </summary>
     class Word : Actor
     {
-        private List<string> _words = new List<string>();
+        private List<Actor> _words = new List<Actor>();
         
 
         public Word()
@@ -24,10 +24,10 @@ namespace _07_speed
         {
             Random rnd = new Random();
             int x = Constants.MAX_X;
-            int y = rnd.Next(20,Constants.MAX_Y - 20);
+            int y = rnd.Next(20,Constants.MAX_Y - 25);
 
             Point position = new Point(x, y);
-            Point velocity = new Point(rnd.Next(-5,0), 0);
+            Point velocity = new Point(rnd.Next(-10,0)/2,0);
             _text = "Yes";
             SetVelocity(velocity);
             SetPosition(position);
@@ -39,8 +39,9 @@ namespace _07_speed
 
             
         }
-        public Actor Geword()
+        public Actor GetWord()
         {
+            PrepareBody();
             return new Actor();
         }
 

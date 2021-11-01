@@ -65,6 +65,12 @@ namespace _07_speed
             return _velocity;
         }
 
+        public int GetLength()
+        {
+            int len = _text.Length;
+            return len;
+        }
+
         public void SetVelocity(Point newVelocity)
         {
             _velocity = newVelocity;

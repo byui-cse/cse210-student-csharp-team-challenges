@@ -18,8 +18,11 @@ namespace _07_speed
         OutputService _outputService = new OutputService();
         InputService _inputService = new InputService();
 
+        TextBox _textBox = new TextBox();
+
 
         Word _word = new Word();
+        List<Actor> _words = new List<Actor>();
         ScoreBoard _scoreBoard = new ScoreBoard();
 
         /// <summary>
@@ -31,6 +34,7 @@ namespace _07_speed
 
             while (_keepPlaying)
             {
+                GetInputs();
                 DoUpdates();
                 DoOutputs();
 
@@ -51,6 +55,10 @@ namespace _07_speed
             _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Speed", Constants.FRAME_RATE);
         }
 
+        private void GetInputs()
+        {
+        }
+
         /// <summary>
         /// Get any input needed from the user.
         /// </summary>
@@ -60,7 +68,17 @@ namespace _07_speed
         /// </summary>
         private void DoUpdates()
         {
-            _word.Move();
+            for(int i = 0; i < 10; i++)
+            {
+                _words.Add(new Word());
+                _words[i].MoveNext();
+                
+                if(IsCollision(_words[i]))
+                {
+                    _words.Remove(_words[i]);
+                    _scoreBoard.AddPoints(-_words[i].GetLength());
+                }
+            }
 
         }
 
@@ -68,12 +86,18 @@ namespace _07_speed
         /// Display the updated state of the game to the user.
         /// </summary>
         private void DoOutputs()
-        {
+        { 
+
             _outputService.StartDrawing();
 
             _outputService.DrawActor(_scoreBoard);
 
-            _outputService.DrawText(_word.GetX(),_word.GetY(),_word.GetText(),true);
+            _outputService.DrawActor(_textBox);
+
+            for(int i = 0; i < 10; i++)
+            {
+                _outputService.DrawText(_words[i].GetX(),_words[i].GetY(),_words[i].GetText(),true);
+            }
 
             _outputService.EndDrawing();
         }
@@ -84,25 +108,17 @@ namespace _07_speed
         /// </summary>
         
 
-        public bool IsCollision(Actor first, Actor second)
+        public bool IsCollision(Actor actor)
         {
-            int x1 = first.GetX();
-            int y1 = first.GetY();
-            int width1 = first.GetWidth();
-            int height1 = first.GetHeight();
-
-            Raylib_cs.Rectangle rectangle1
-                = new Raylib_cs.Rectangle(x1, y1, width1, height1);
-
-            int x2 = second.GetX();
-            int y2 = second.GetY();
-            int width2 = second.GetWidth();
-            int height2 = second.GetHeight();
-
-            Raylib_cs.Rectangle rectangle2
-                = new Raylib_cs.Rectangle(x2, y2, width2, height2);
-
-            return Raylib.CheckCollisionRecs(rectangle1, rectangle2);
+            int x1 = actor.GetX();
+            if(x1 <= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
