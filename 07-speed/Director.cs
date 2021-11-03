@@ -64,7 +64,6 @@ namespace _07_speed
             {
                 foreach(Word word in _words)
                 {
-                    Console.WriteLine(word.GetText());
                     if (word.CheckGuess(_buffer))
                     {
                         int points = word.GetTextLength();
@@ -77,6 +76,20 @@ namespace _07_speed
                     }
                 }
                 _buffer = "";
+            }
+            if (_inputService.BackspacePressed())
+            {
+                string hold = "";
+                for (int i = 0; i < _buffer.Length-1; i++ )
+                {
+                    hold += _buffer[i];
+                }
+                _buffer = hold;
+            }
+
+            if (_inputService.EscIsPressed())
+            {
+                Raylib.WindowShouldClose();
             }
 
         }

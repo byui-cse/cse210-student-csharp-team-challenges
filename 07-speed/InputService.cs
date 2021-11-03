@@ -33,7 +33,15 @@ namespace _07_speed
         {
             return Raylib.IsKeyPressed(KeyboardKey.KEY_ENTER);
         }
-            
+
+        public bool BackspacePressed()
+        {
+            return Raylib.IsKeyPressed(KeyboardKey.KEY_BACKSPACE);
+        }
+        public bool EscIsPressed()
+        {
+            return Raylib.IsKeyPressed(KeyboardKey.KEY_ESCAPE);
+        }    
         
         /// <summary>
         /// Returns true if the user has attempted to close the window.
