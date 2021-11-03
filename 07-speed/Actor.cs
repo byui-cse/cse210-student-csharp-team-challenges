@@ -92,11 +92,6 @@ namespace _07_speed
             int newX = x+_velocity.GetX();
             int newY = y;
 
-            if (newX < 0)
-            {
-                newX = Constants.MAX_X;
-            }
-
             if (newY < 0)
             {
                 newY = Constants.MAX_Y;

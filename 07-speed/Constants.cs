@@ -7,8 +7,8 @@ namespace _07_speed
     /// </summary>
     public static class Constants
     {
-        public const int MAX_X = 1200;
-        public const int MAX_Y = 800;
+        public const int MAX_X = 800;
+        public const int MAX_Y = 600;
         public const int FRAME_RATE = 90;
 
         public const int DEFAULT_SQUARE_SIZE = 20;

@@ -90,8 +90,12 @@ namespace _07_speed
         /// </summary>
         private void DoUpdates()
         {
-            while (_words.Count < 10)
+            while (true)
             {
+                if(_words.Count >= 10)
+                {
+                    break;
+                }
                 _words.Add(new Word());
             }
             foreach (Word word in _words)

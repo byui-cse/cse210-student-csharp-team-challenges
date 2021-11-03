@@ -27,7 +27,7 @@ namespace _07_speed
             int y = rnd.Next(20,Constants.MAX_Y - 25);
 
             Point position = new Point(x, y);
-            Point velocity = new Point(rnd.Next(-10,0)/2,0);
+            Point velocity = new Point(rnd.Next(-5,-1)/2,0);
             _text = GetRandWord();
             SetVelocity(velocity);
             SetPosition(position);
